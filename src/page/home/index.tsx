@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { Pages } from '../../util/page';
+import { Pages } from '@/util/page';
 
 const Home = () => {
   return (
