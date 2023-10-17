@@ -1,18 +1,62 @@
-import React from 'react';
+'use client';
 
-import { Link } from 'react-router-dom';
+// import { useRouter } from 'next/navigation';
+import React, { useState } from 'react';
 
-import { Pages } from '@/util/page';
+import { useNavigate } from 'react-router-dom';
 
-const Home = () => {
+import { MainSearchStyles } from '@/component/react-select-styles/styles';
+import useGroupedOptions from '@/service/api/request/groupOptions';
+
+import MainSearch from './mainSearch';
+import { Wrapper, Container, Tab, Title } from './styles';
+import TabPanel from './tabPanel';
+import TabsComponent from './tabsComponent';
+
+const tabLabels: string[] = ['Search for Candidates', 'Search for Contracts'];
+
+function MainPage() {
+  const [selectedTab, setSelectedTab] = useState(0);
+
+  const navigate = useNavigate();
+  const groupedOptions = useGroupedOptions();
+
+  const handleChangeTab = (newValue: number) => {
+    setSelectedTab(newValue);
+  };
+
+  const handleOptionSelect = (selectedValue: any) => {
+    navigate(
+      `/candidate?${selectedValue.group.toLocaleLowerCase()}=${
+        selectedValue.value
+      }`
+    );
+  };
+
   return (
-    <div>
-      <h1>Home</h1>
-      <Link to={Pages.POST}>
-        <button data-testid='incident-details-button'>Go to Post</button>
-      </Link>
-    </div>
+    <Wrapper>
+      <Container>
+        <TabsComponent
+          handleChangeTab={handleChangeTab}
+          labels={tabLabels}
+          selectedTab={selectedTab}
+        />
+        <Tab>
+          <TabPanel index={0} value={selectedTab}>
+            <Title>Find a specialist for your next project</Title>
+            <MainSearch
+              onOptionSelect={handleOptionSelect}
+              options={groupedOptions}
+              styles={MainSearchStyles}
+            />
+          </TabPanel>
+          <TabPanel index={1} value={selectedTab}>
+            {/* Content for the second tab */}
+          </TabPanel>
+        </Tab>
+      </Container>
+    </Wrapper>
   );
-};
+}
 
-export default Home;
+export default MainPage;
