@@ -1,8 +1,6 @@
 module.exports = {
-  plugins: ['import', '@emotion'],
+  plugins: ['import'],
   extends: [
-    'eslint:recommended',
-    'next/core-web-vitals',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
@@ -28,7 +26,7 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 2022, // Allows for the parsing of modern ECMAScript features
+    ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
     sourceType: 'module', // Allows for the use of imports
   },
   overrides: [
@@ -47,28 +45,30 @@ module.exports = {
               'sibling',
               'index',
             ],
+
             'newlines-between': 'always',
             alphabetize: {
               order: 'asc',
               caseInsensitive: false,
             },
-            pathGroupsExcludedImportTypes: ['builtin'],
+            pathGroupsExcludedImportTypes: ['react'],
+
             pathGroups: [
               {
-                pattern: 'builtin',
-                group: 'builtin',
+                pattern: 'react',
+                group: 'external',
                 position: 'before',
               },
-              { pattern: '@/api/', group: 'internal', position: 'after' },
+              { pattern: '@/api/**', group: 'internal', position: 'after' },
               {
-                pattern: '@/components/',
+                pattern: '@/components/**',
                 group: 'internal',
                 position: 'after',
               },
-              { pattern: '@/types/', group: 'internal', position: 'after' },
-              { pattern: '@/router/', group: 'internal', position: 'after' },
-              { pattern: '@/pages/', group: 'internal', position: 'after' },
-              { pattern: '@/storage/', group: 'internal', position: 'after' },
+              { pattern: '@/types/**', group: 'internal', position: 'after' },
+              { pattern: '@/router/**', group: 'internal', position: 'after' },
+              { pattern: '@/pages/**', group: 'internal', position: 'after' },
+              { pattern: '@/storage/**', group: 'internal', position: 'after' },
               { pattern: '@/utils/**', group: 'internal', position: 'after' },
             ],
           },
@@ -82,31 +82,16 @@ module.exports = {
     },
     'import/extensions': ['.ts', '.js', '.tsx', '.json', '.json5'],
     'import/resolver': {
+      node: {
+        extensions: ['.ts', '.js', '.tsx', '.json', '.json5'],
+      },
       alias: {
         map: [['@', './src']],
         extensions: ['.ts', '.js', '.tsx', '.json', '.json5'],
       },
-      'eslint-import-resolver-alias': {
-        alias: {
-          '@': './src',
-          // '@components': '../*',
-        },
-      },
     },
   },
   rules: {
-    'react/no-unknown-property': ['error', { ignore: ['css'] }],
-    'import/exstension': 'off',
-    'no-unsafe-optional-chaining': 'off',
-    'import/no-unresolved': 'off',
-    'import/no-relative-parent-imports': [
-      'error',
-      {
-        ignore: ['@/'],
-      },
-    ],
-    'react/react-in-jsx-scope': 'off',
-    'prettier/prettier': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'no-unused-vars': 'off',
     'import/no-named-as-default': 'off',
