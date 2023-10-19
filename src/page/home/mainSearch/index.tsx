@@ -2,8 +2,8 @@ import React from 'react';
 
 import { InputActionMeta } from 'react-select';
 
-import ThemedContainer from '@/component/layout/themeProvider';
-import SearchSelect from '@/component/react-select';
+import { SearchSelect } from '@/components';
+import { ThemedContainer } from '@/providers';
 
 interface FiltersType {
   specializations?: number[];

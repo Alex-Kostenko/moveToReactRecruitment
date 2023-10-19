@@ -1,12 +1,11 @@
-'use client';
-
 // import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-import { MainSearchStyles } from '@/component/react-select-styles/styles';
 import useGroupedOptions from '@/service/api/request/groupOptions';
+
+import { MainSearchStyles } from '@/components/react-select-styles/styles';
 
 import MainSearch from './mainSearch';
 import { Wrapper, Container, Tab, Title } from './styles';
@@ -41,6 +40,7 @@ function MainPage() {
           labels={tabLabels}
           selectedTab={selectedTab}
         />
+        <Link to='/candidate'>CLICk</Link>
         <Tab>
           <TabPanel index={0} value={selectedTab}>
             <Title>Find a specialist for your next project</Title>

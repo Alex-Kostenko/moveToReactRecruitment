@@ -1,0 +1,441 @@
+@import 'src/style/variables.scss';
+@import '../../style/mixins.scss';
+
+.button {
+  background: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 2px;
+  transition: var(--transition);
+  text-transform: none;
+  box-shadow: none;
+  height: 56px;
+  width: 380px;
+  cursor: pointer;
+  &:hover {
+    background: var(--blue);
+    filter: brightness(0.85);
+    box-shadow: none;
+  }
+  & p {
+    @include button;
+    color: var(--white);
+    justify-content: center;
+  }
+}
+
+.basic {
+  @include button;
+  height: fit-content;
+  width: fit-content;
+  cursor: pointer;
+  padding: 6px 16px;
+
+  &.disabled {
+    border: 1px solid var(--light-grey);
+    background: var(--light-grey);
+  }
+}
+
+.google {
+  background: var(--white);
+  border-radius: 2px;
+  transition: var(--transition);
+  text-transform: none;
+  box-shadow: none;
+  height: 56px;
+  width: 380px;
+  border: 1px solid var(--blue);
+  border-radius: 2px;
+  &:hover {
+    background: var(--white);
+    filter: brightness(0.85);
+    box-shadow: none;
+  }
+  & p {
+    line-height: initial;
+    @include button;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+  }
+  & p::before {
+    content: '';
+    // background: url('/img/Google.svg');
+    background-size: cover;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+  }
+}
+
+.clear {
+  background: var(--white);
+  border-radius: 2px;
+  transition: var(--transition);
+  text-transform: none;
+  box-shadow: none;
+  height: 56px;
+  width: 380px;
+  border: 1px solid var(--white);
+  border-radius: 2px;
+  &:hover {
+    background: var(--white);
+    filter: brightness(0.85);
+    box-shadow: none;
+  }
+  & p {
+    @include button;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+  }
+}
+
+.clearWBorder {
+  background: var(--white);
+  border-radius: 2px;
+  transition: var(--transition);
+  text-transform: none;
+  box-shadow: none;
+  height: 56px;
+  width: 380px;
+  border: 1px solid var(--blue);
+  border-radius: 2px;
+  &:hover {
+    background: var(--white);
+    filter: brightness(0.85);
+    box-shadow: none;
+  }
+  & p {
+    @include button;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+  }
+}
+
+.iconButton {
+  padding: 6px 16px;
+  background: var(--white);
+  border-radius: 3px;
+  transition: var(--transition);
+  text-transform: none;
+  box-shadow: none;
+  height: 56px;
+  width: fit-content;
+  border: 1px solid var(--blue);
+  &:hover {
+    background: var(--white);
+    filter: brightness(0.85);
+    box-shadow: none;
+  }
+  & p {
+    @include button;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+  }
+}
+
+.link {
+  background: var(--white);
+  border-radius: 2px;
+  transition: var(--transition);
+  text-transform: none;
+  box-shadow: none;
+  height: 32px;
+  width: fit-content;
+  border: 1px solid var(--white);
+  border-radius: 2px;
+  &:hover {
+    background: var(--white);
+    filter: brightness(1);
+    box-shadow: none;
+  }
+  & p {
+    @include button;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+  }
+}
+
+.backButton {
+  background: var(--white);
+  border-radius: 2px;
+  transition: var(--transition);
+  text-transform: none;
+  box-shadow: none;
+  height: 32px;
+  padding: 10px 0;
+  width: fit-content;
+  border: 1px solid var(--white);
+  border-radius: 2px;
+  font-size: 14px;
+  &:hover {
+    background: var(--white);
+    filter: brightness(1);
+    box-shadow: none;
+  }
+  & p {
+    line-height: initial;
+    @include button;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    letter-spacing: -0.7px;
+    justify-content: center;
+  }
+  & p::before {
+    content: '';
+    // background: url('/img/LeftArrow.svg');
+    background-size: cover;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+  }
+}
+
+.next {
+  background: var(--blue);
+  border-radius: 2px;
+  transition: var(--transition);
+  text-transform: none;
+  box-shadow: none;
+  height: 38px;
+  width: 144px;
+  border: 1px solid var(--blue);
+  border-radius: 2px;
+  &:hover {
+    background: var(--blue);
+    filter: brightness(0.85);
+    box-shadow: none;
+  }
+  & p {
+    @include buttonNext;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+  }
+}
+.prev {
+  background: var(--white);
+  border-radius: 2px;
+  transition: var(--transition);
+  text-transform: none;
+  box-shadow: none;
+  height: 38px;
+  width: 144px;
+  border: 1px solid var(--blue);
+  border-radius: 2px;
+  &:hover {
+    background: var(--white);
+    filter: brightness(0.85);
+    box-shadow: none;
+  }
+  & p {
+    @include buttonNext;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+  }
+}
+
+.cv {
+  background: var(--blue);
+  border-radius: 2px;
+  transition: var(--transition);
+  text-transform: none;
+  box-shadow: none;
+  height: 32px;
+  width: 109px;
+  border: 1px solid var(--blue);
+  border-radius: 2px;
+  &:hover {
+    background: var(--blue);
+    filter: brightness(0.85);
+    box-shadow: none;
+  }
+  & p {
+    @include buttonCV;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+  }
+}
+
+.employees {
+  background: var(--blue);
+  border-radius: 2px;
+  transition: var(--transition);
+  text-transform: none;
+  box-shadow: none;
+  height: 32px;
+  padding: 0 21px;
+  width: fit-content;
+  border: 1px solid var(--blue);
+  border-radius: 2px;
+  &:hover {
+    background: var(--blue);
+    filter: brightness(0.85);
+    box-shadow: none;
+  }
+  & p {
+    @include buttonCV;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+  }
+}
+
+.downloadCV {
+  background: var(--white);
+  border-radius: 2px;
+  transition: var(--transition);
+  text-transform: none;
+  box-shadow: none;
+  height: 32px;
+  min-width: 142px;
+  width: fit-content;
+  border: 1px solid var(--blue-light-middle);
+  border-radius: 2px;
+  &:hover {
+    background: var(--white);
+    filter: brightness(0.85);
+    box-shadow: none;
+  }
+  & p {
+    @include buttonNext;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+  }
+}
+
+.interview {
+  background: var(--blue);
+  border-radius: 2px;
+  transition: var(--transition);
+  text-transform: none;
+  box-shadow: none;
+  height: 32px;
+  min-width: 143px;
+  width: fit-content;
+  border: 1px solid var(--blue);
+  border-radius: 2px;
+  &:hover {
+    background: var(--blue);
+    filter: brightness(0.85);
+    box-shadow: none;
+  }
+  & p {
+    @include buttonNext;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+  }
+}
+
+.hire {
+  background: var(--orange-light);
+  border-radius: 2px;
+  transition: var(--transition);
+  text-transform: none;
+  box-shadow: none;
+  height: 32px;
+  width: 131px;
+  border: 1px solid var(--orange-light);
+  border-radius: 2px;
+  &:hover {
+    background: var(--orange-light);
+    filter: brightness(0.85);
+    box-shadow: none;
+  }
+  & p {
+    @include buttonCV;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+  }
+}
+.addPhoto {
+  background: var(--white);
+  border-radius: 2px;
+  transition: var(--transition);
+  text-transform: none;
+  box-shadow: none;
+  height: 40px;
+  padding: 10px 16px 10px 12px;
+  width: 125px;
+  border: 1px solid var(--white);
+  border-radius: 2px;
+  &:hover {
+    background: var(--white);
+    filter: brightness(0.85);
+    box-shadow: none;
+  }
+  & p {
+    line-height: initial;
+    @include button;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    letter-spacing: -0.7px;
+  }
+  & p::before {
+    content: '';
+    // background: url('/img/addPhoto.svg');
+    background-size: cover;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+  }
+}
+.createEmployee {
+  background: initial;
+  border-radius: 2px;
+  transition: var(--transition);
+  text-transform: none;
+  box-shadow: none;
+  height: 40px;
+  width: 148px;
+  border: 1px solid #bbc6e6;
+  border-radius: 2px;
+  &:hover {
+    background: #ebf4fc;
+    filter: brightness(0.85);
+    box-shadow: none;
+  }
+  & p {
+    @include buttonCrEmp;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+  }
+}
+.cardEmployee {
+  background: var(--blue);
+  border-radius: 2px;
+  transition: var(--transition);
+  text-transform: none;
+  box-shadow: none;
+  height: 32px;
+  width: auto;
+  border: 1px solid var(--blue);
+  border-radius: 2px;
+  &:hover {
+    background: var(--blue);
+    filter: brightness(0.85);
+    box-shadow: none;
+  }
+  & p {
+    @include buttonCV;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+  }
+}

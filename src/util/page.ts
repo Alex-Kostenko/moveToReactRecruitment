@@ -1,4 +1,5 @@
 export enum Pages {
   HOME = '/',
-  POST = '/post/',
+  TEST_PRIVATE = '/private_test',
+  CANDIDATE = '/candidate',
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Tabs, Tab } from '@mui/material';
 
-import ThemedContainer from '@/component/layout/themeProvider';
+import { ThemedContainer } from '@/providers';
 
 import { TabComponent } from './styles';
 

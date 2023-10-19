@@ -1,0 +1,195 @@
+@import "variables";
+/**********************************************/
+
+@mixin t-regular() {
+  font-style: normal;
+  font-weight: 400;
+}
+@mixin t-medium() {
+  font-style: normal;
+  font-weight: 500;
+}
+@mixin t-semi() {
+  font-style: normal;
+  font-weight: 600;
+}
+@mixin t-bold() {
+  font-style: normal;
+  font-weight: 700;
+}
+
+/**********************************************/
+
+@mixin logo() {
+  @include t-medium;
+  color: var(--blackText);
+  font-size: 12px;
+  line-height: 120%;
+}
+@mixin button() {
+  @include t-medium;
+  font-size: 16px;
+  line-height: initial;
+  letter-spacing: 0.1px;
+  font-family: "Anek Latin", sans-serif;
+}
+@mixin buttonCrEmp() {
+  @include t-medium;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0.1px;
+  font-family: "Anek Latin", sans-serif;
+}
+@mixin buttonNext() {
+  @include t-medium;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  font-family: "Anek Latin", sans-serif;
+}
+@mixin buttonSeniority() {
+  @include t-medium;
+  font-size: 16px;
+  line-height: 130%;
+}
+@mixin buttonCV() {
+  @include t-semi;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+@mixin link() {
+  @include t-medium;
+  color: var(--blue);
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+@mixin linkMedium() {
+  @include t-medium;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+/**********************************************/
+@mixin linkLittle() {
+  @include t-medium;
+  font-size: 12px;
+  line-height: normal;
+}
+@mixin titleReg() {
+  @include t-semi;
+  color: var(--blackText);
+  font-size: 32px;
+  line-height: normal;
+}
+@mixin titleCrEmp() {
+  @include t-semi;
+  color: var(--blackText);
+  font-size: 28px;
+  line-height: 120%;
+}
+@mixin titleCrProfile() {
+  @include t-semi;
+  color: var(--blackText);
+  font-size: 18px;
+  line-height: 16px;
+}
+@mixin titleModal() {
+  @include t-semi;
+  color: var(--blackText);
+  font-size: 20px;
+  line-height: 120%;
+}
+/**********************************************/
+@mixin subtitleCrEmp() {
+  @include t-semi;
+  color: var(--blackText);
+  font-size: 18px;
+  line-height: 120%;
+}
+/**********************************************/
+@mixin descCrEmp() {
+  @include t-regular;
+  color: var(--grey-dark);
+  font-size: 16px;
+  line-height: 135.5%;
+}
+@mixin descCrProfile() {
+  @include t-regular;
+  color: var(--grey-dark);
+  font-size: 16px;
+  line-height: 140%;
+}
+@mixin descReg() {
+  @include t-regular;
+  color: var(--grey-dark);
+  font-size: 16px;
+  line-height: normal;
+}
+@mixin descRegAgree() {
+  @include t-regular;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/**********************************************/
+@mixin nameCrEmp() {
+  @include t-semi;
+  color: var(--blue);
+  font-size: 18px;
+  line-height: 16px;
+}
+@mixin bigNameCrEmp() {
+  @include t-semi;
+  color: var(--black-title);
+  font-size: 28px;
+  line-height: 16px;
+}
+@mixin locationCrEmp() {
+  @include t-regular;
+  color: var(--black);
+  font-size: 16px;
+  line-height: 20.8px;
+}
+@mixin logoCrEmp() {
+  @include t-semi;
+  color: var(--blue);
+  font-size: 24px;
+  line-height: 16px;
+}
+@mixin logoHeaderEmp() {
+  @include t-semi;
+  color: var(--white);
+  font-size: 16px;
+}
+@mixin bigLogoCrEmp() {
+  @include t-semi;
+  color: var(--blue);
+  font-size: 64px;
+  line-height: 16px;
+}
+@mixin cardTCrEmp() {
+  @include t-semi;
+  color: var(--blue);
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: normal;
+  letter-spacing: -0.8px;
+}
+@mixin cardSCrEmp() {
+  @include t-regular;
+  color: var(--black);
+  font-size: 14px;
+  line-height: 135.5%;
+  letter-spacing: normal;
+  letter-spacing: -0.4px;
+}
+@mixin priceCrEmp() {
+  @include t-semi;
+  color: var(--black);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/**********************************************/

@@ -23,7 +23,7 @@ const Control = ({ children, ...props }: any) => (
   </components.Control>
 );
 
-function SearchSelect({
+export function SearchSelect({
   options,
   onChange,
   placeholder,
@@ -58,5 +58,3 @@ function SearchSelect({
     />
   );
 }
-
-export default SearchSelect;

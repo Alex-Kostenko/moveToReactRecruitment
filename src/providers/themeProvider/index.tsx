@@ -11,7 +11,7 @@ interface ThemedContainerProps {
   theme?: 'default' | 'other' | 'tabs';
 }
 
-const ThemedContainer: React.FC<ThemedContainerProps> = ({
+export const ThemedContainer: React.FC<ThemedContainerProps> = ({
   children,
   theme = 'default',
 }) => {
@@ -35,5 +35,3 @@ const ThemedContainer: React.FC<ThemedContainerProps> = ({
 
   return <ThemeProvider theme={selectedTheme}>{children}</ThemeProvider>;
 };
-
-export default ThemedContainer;

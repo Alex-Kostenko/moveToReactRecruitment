@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['import'],
+  plugins: ['import', 'no-relative-import-paths'],
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
@@ -92,10 +92,15 @@ module.exports = {
     },
   },
   rules: {
+    'no-relative-import-paths/no-relative-import-paths': [
+      'error',
+      { allowSameFolder: true, rootDir: 'src', prefix: '@' },
+    ],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'no-unused-vars': 'off',
     'import/no-named-as-default': 'off',
     '@typescript-eslint/ban-types': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     'import/no-named-as-default-member': 'off',
     camelcase: 0,

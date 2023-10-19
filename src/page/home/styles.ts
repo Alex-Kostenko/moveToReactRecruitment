@@ -1,11 +1,13 @@
 import styled from '@emotion/styled';
 
+import leftImg from '@/asset/photo/MainPageBgLeft.png';
+import rightImg from '@/asset/photo/MainPageBgRight.png';
+
 export const Wrapper = styled.div`
   height: calc(100vh - 64px);
   width: 100vw;
   background-color: #ebf4fc;
-  background-image: url('/img/MainPageBgLeft.png'),
-    url('/img/MainPageBgRight.png');
+  background-image: url(${leftImg}), url(${rightImg});
   background-size: 320px, 1083px;
   background-position: bottom left, bottom right;
   background-repeat: no-repeat;
